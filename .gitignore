@@ -3,5 +3,6 @@ logs/*
 node_modules/
 bower_components/
 tmp
-.DS_Store
+.DS_Storegit
 .idea
+app/shared/
