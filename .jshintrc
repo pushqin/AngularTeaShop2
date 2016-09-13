@@ -1,0 +1,16 @@
+{
+  "strict": "global",
+  "globals": {
+    // Angular
+    "angular": false,
+
+    // Angular mocks
+    "module": false,
+    "inject": false,
+
+    // Protractor
+    "browser": false,
+    "element": false,
+    "by": false
+  }
+}
