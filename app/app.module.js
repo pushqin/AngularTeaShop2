@@ -2,25 +2,6 @@
 // also include ngRoute for all our routing needs
 var scotchApp = angular.module('scotchApp', ['ngRoute']);
 
-scotchApp.config(function($routeProvider) {
-    $routeProvider
-
-        .when('/', {
-            templateUrl : 'components/home/home.html',
-            controller  : 'homeController'
-        })
-
-        .when('/products', {
-            templateUrl : 'components/products/products.html',
-            controller  : 'productsController'
-        })
-
-        .when('/cart', {
-            templateUrl : 'components/cart/cart.html',
-            controller  : 'cartController'
-        });
-});
-
 // create the controller and inject Angular's $scope
 scotchApp.controller('homeController', function($scope) {
   // create a message to display in our view

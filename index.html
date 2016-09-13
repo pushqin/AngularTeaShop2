@@ -9,8 +9,13 @@
   <!-- load angular and angular route via CDN -->
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
   <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+
+  <!--<script src="app/components/home/home.html"/>-->
+  <!--<script src="app/components/products/products.html"/>-->
+  <!--<script src="app/components/cart/cart.html"/>-->
   <script src="app/app.module.js"></script>
-  <!--<script src="app/app.routes.js"></script>-->
+  <script src="app/app.routes.js"></script>
+
 </head>
 <body ng-controller="homeController">
 
@@ -24,9 +29,9 @@
       </div>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><i class="fa fa-home"></i> Home</a></li>
-        <li><a href="#products"><i class="fa fa-shield"></i> products</a></li>
-        <li><a href="#cart"><i class="fa fa-comment"></i> cart</a></li>
+        <li><a href="#/"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#/products"><i class="fa fa-shield"></i> products</a></li>
+        <li><a href="#/cart"><i class="fa fa-comment"></i> cart</a></li>
       </ul>
     </div>
   </nav>
