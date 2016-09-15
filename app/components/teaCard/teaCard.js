@@ -7,3 +7,4 @@ angular.module("iAngelsTeaShop")
         templateUrl : "app/components/teaCard/teaCard.html"
     };
 });
+

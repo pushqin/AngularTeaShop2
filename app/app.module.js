@@ -13,9 +13,21 @@ iAngelsTeaShop.controller('homeController', ['$scope',function ($scope) {
 iAngelsTeaShop.controller('productsController', ['$scope',function ($scope) {
     // "use strict";
     $scope.message = 'Look! I am an about page.';
+    $scope.callRestService= function(removeFilter) {
+        
+        if(removeFilter){
+            
+        }
+        //TODO: show all result if removeFilter is true
+        $http({method: 'GET', url: '/someUrl'}).
+        success(function(data, status, headers, config) {
+            $scope.results.push(data);  //retrieve results and add to existing results
+        })
+    }
 }]);
 
 iAngelsTeaShop.controller('cartController',['$scope', function ($scope) {
     // "use strict";
     $scope.message = 'Contact us! JK. This is just a demo.';
 }]);
+

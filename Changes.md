@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Current
 ### Added
 
+
 ### Changed
 
 
@@ -14,6 +15,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Tea card directive
 - Bootstrap dependency
+- Product like template
 
 ## [0.0.0] - 2015-09-13
 ### Added
