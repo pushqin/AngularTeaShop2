@@ -1,0 +1,21 @@
+.elipsis-bottom {
+  background: url("http://images.wisegeek.com/looseleaf-black-tea-with-two-fresh-tea-leaves.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 280px;
+  height: 280px;
+
+  -webkit-clip-path: ellipse(25% 40% at 50% 50%);
+  clip-path: ellipse(25% 40% at 50% 50%);
+}
+
+.elipsis-top  {
+  background: url("http://images.wisegeek.com/looseleaf-black-tea-with-two-fresh-tea-leaves.jpg");
+  background-size: contain;
+  width: 100px;
+  height: 100px;
+  margin-left: 90px;
+  background-repeat: no-repeat;
+  -webkit-clip-path: ellipse(50 50% at 50% 50%);
+  clip-path: ellipse(50% 50% at 50% 50%);
+}
