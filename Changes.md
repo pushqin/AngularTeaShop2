@@ -7,8 +7,15 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ## Current
 ### Added
 
+Added Cart page template with list and checkout button
+Added angular material dependency
 
 ### Changed
+
+## [0.0.0] - 2015-09-16
+### Added
+- Added Cart page template with list and checkout button
+- Added angular material dependency
 
 
 ## [0.0.0] - 2015-09-15

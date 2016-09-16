@@ -1,7 +1,19 @@
 <!-- about.html -->
-<div class="jumbotron text-center">
-  <h1>Cart</h1>
 
-  <p>{{ message }}</p>
-  <ngcart-cart></ngcart-cart>
+<div class="container">
+    <md-list>
+        <md-list-item ng-repeat="person in people" ng-click="goToPerson(person.name, $event)" class="noright">
+            <img alt="{{ person.name }}" ng-src="{{ person.img }}" class="md-avatar">
+            <p>{{ person.name }}</p>
+
+        
+            <md-input class="md-secondary md-hue-3" ng-model="person.selected">2</md-input>
+            <md-button ng-click="minus($event)" class="md-secondary md-hue-3">MINUS</md-button>
+            <md-button ng-click="plus($event)" class="md-secondary md-hue-3">PLUS</md-button>
+        </md-list-item>
+    </md-list>
+    
+    <md-button ng-click="plus($event)" class="md-secondary md-hue-3 pull-right">CHECKOUT</md-button>
+    
+    
 </div>
