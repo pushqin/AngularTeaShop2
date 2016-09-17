@@ -8,15 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 
 
-
 ### Changed
+
 
 ## [0.0.0] - 2015-09-17
 ### Added
 - Added Cart page template with list and checkout button
 - Added angular material dependency
 - Added angular material grid to home
+- Added footer
+- Added mock data for home page
 
+### Changed
+- Removed grid from directive
 
 ## [0.0.0] - 2015-09-16
 ### Added

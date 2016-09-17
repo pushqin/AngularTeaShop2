@@ -9,60 +9,129 @@ angular.module('iAngelsTeaShop')
             return;
         }
         var type = {
-            type:{
                 id:"id",
                 name:"type-name",
                 description:"type-description",
-           }
         }
         
-        var images = {images:[
-            {imgSrc:"imgSrc1"},
-            {imgSrc:"imgSrc2"},
-            {imgSrc:"imgSrc3"},
-        ]}
+        var images = [
+            {imgSrc:"assets/images/tea.jpg"},
+            {imgSrc:"assets/images/tea1.jpg"},
+            {imgSrc:"assets/images/tea2.jpg"}
+        ]
+        var images1= [
+            {imgSrc:"assets/images/tea1.jpg"},
+            {imgSrc:"assets/images/tea1.jpg"},
+            {imgSrc:"assets/images/tea2.jpg"}
+        ]
+        var images2 = [
+            {imgSrc:"assets/images/tea2.jpg"},
+            {imgSrc:"assets/images/tea1.jpg"},
+            {imgSrc:"assets/images/tea2.jpg"}
+        ]
+        var images3 = [
+            {imgSrc:"assets/images/tea3.jpg"},
+            {imgSrc:"assets/images/tea1.jpg"},
+            {imgSrc:"assets/images/tea2.jpg"}
+        ]
+        var images4 = [
+            {imgSrc:"assets/images/tea4.jpg"},
+            {imgSrc:"assets/images/tea1.jpg"},
+            {imgSrc:"assets/images/tea2.jpg"}
+        ]
+        var images5 = [
+            {imgSrc:"assets/images/tea5.jpg"},
+            {imgSrc:"assets/images/tea1.jpg"},
+            {imgSrc:"assets/images/tea2.jpg"}
+        ]
     
     
-        var tea1 = {
+        var tea = {
             id:"id",
-            price:"price",
+            price:"10$",
             description:"description",
-            type,
-            name:"jopa",
+            type ,
+            name:"tea",
             originCountry:"originCountry",
             steepingType:"steepingType",
             dosing:"dosing",
             waterTemperature:"waterTemperature",
-            images
+            images:images
+        };
+        var tea1 = {
+            id:"id",
+            price:"10.5$",
+            description:"description",
+            type ,
+            name:"tea1",
+            originCountry:"originCountry",
+            steepingType:"steepingType",
+            dosing:"dosing",
+            waterTemperature:"waterTemperature",
+            images:images1
         };
         var tea2 = {
             id:"id",
-            price:"price",
+            price:"15$",
             description:"description",
             type,
-            name:"Hren",
+            name:"tea2",
             originCountry:"originCountry",
             steepingType:"steepingType",
             dosing:"dosing",
             waterTemperature:"waterTemperature",
-            images
+            images:images2
         };
-        
-        var teas = {teas:[tea1,tea2,tea1,tea1,tea1,tea1]}
+        var tea3 = {
+            id:"id",
+            price:"9$",
+            description:"description",
+            type,
+            name:"tea3",
+            originCountry:"originCountry",
+            steepingType:"steepingType",
+            dosing:"dosing",
+            waterTemperature:"waterTemperature",
+            images:images3
+        };
+    
+        var tea4 = {
+            id:"id",
+            price:"66$",
+            description:"description",
+            type,
+            name:"tea4",
+            originCountry:"originCountry",
+            steepingType:"steepingType",
+            dosing:"dosing",
+            waterTemperature:"waterTemperature",
+            images:images4
+        };
+    
+        var tea5 = {
+            id:"id",
+            price:"45$",
+            description:"description",
+            type,
+            name:"tea5",
+            originCountry:"originCountry",
+            steepingType:"steepingType",
+            dosing:"dosing",
+            waterTemperature:"waterTemperature",
+            images:images5
+        };
+    
+    
+        var teas = [tea,tea1,tea2,tea3,tea4,tea5];
 
         // returns the current list of phones
-        $httpBackend.whenGET('/topteas').respond(teas.teas);
-        $httpBackend.whenGET('/allTeas').respond(teas.teas);
+        $httpBackend.whenGET('/topteas').respond(teas);
+        $httpBackend.whenGET('/allTeas').respond(teas);
     
         
         // Requests for templates are handled by the real
-        $httpBackend.whenGET('app/components/home/home.html').passThrough();
-        $httpBackend.whenGET('app/components/products/products.html').passThrough();
-        $httpBackend.whenGET('app/components/cart/cart.html').passThrough();
-        $httpBackend.whenGET('app/components/teaCard/teaCard.html').passThrough();
-        $httpBackend.whenGET('app/components/productsFilterList/productsFilterList.html').passThrough();
-        $httpBackend.whenGET('app/components/directives/grid/grid.html').passThrough();
-        $httpBackend.whenGET('app/components/directives/gridTile/gridTile.html').passThrough();
-        $httpBackend.whenGET('icons/avatar-icons.svg').passThrough();
-      
+        // pass through all
+        $httpBackend.whenGET(/[\s\S]*/).passThrough();
+       
+    
     }]);

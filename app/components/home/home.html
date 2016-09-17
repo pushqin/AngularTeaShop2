@@ -8,14 +8,21 @@
         <img src="assets/images/icon.png">
     </div>
     <!--<md-button ng-click="getTopTeas($event)" class="md-secondary md-hue-3">GET TEST</md-button>-->
-    <div class="row text-center">
-       OUR BEST TEAS
+    <div class="row text-center best">
+       <h1>The Best You Can Get</h1>
     </div>
-
-    <grid-directive></grid-directive>
- 
-    <!--<section class="products" ng-repeat="topTea in topTeas track by $index">-->
-        <!--<tea-card-directive></tea-card-directive>-->
-    <!--</section>-->
+    
+    <div flex="" ng-cloak="" class="gridListdemoDynamicTiles">
+  
+        <md-grid-list md-cols="1" md-cols-sm="1" md-cols-md="2" md-cols-gt-md="3"
+                      md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter="30px" md-gutter-gt-sm="30px">
+            
+            <md-grid-tile ng-repeat="tile in tiles" md-rowspan="1" md-colspan="1" md-colspan-sm="1"
+                          md-colspan-xs="1" ng-class="tile.background">
+                <grid-tile-directive tile =tile ></grid-tile-directive>
+            
+            </md-grid-tile>
+        </md-grid-list>
+    </div>
     
 </div>

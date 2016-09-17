@@ -2,5 +2,8 @@
 
 <link rel="stylesheet" href="app/components/directives/gridTile/gridTile.scss"/>
 
-<md-icon md-svg-icon="{{tile.icon}}"></md-icon>
-<md-grid-tile-footer><h3>{{tile.title}}</h3></md-grid-tile-footer>
+<image src="{{tile.images[0].imgSrc}}" ></image>
+<md-grid-tile-footer>
+    <h3>{{tile.name}}</h3>
+    <h3>{{tile.price}}</h3>
+</md-grid-tile-footer>

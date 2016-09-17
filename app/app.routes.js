@@ -18,6 +18,6 @@ angular.module('iAngelsTeaShop')
             .when('/cart', {
                 templateUrl: 'app/components/cart/cart.html',
                 controller: 'cartController',
-            });
+            })
     }]);
 
