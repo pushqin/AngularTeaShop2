@@ -7,18 +7,15 @@
     <div class="row text-center">
         <img src="assets/images/icon.png">
     </div>
-    
+    <!--<md-button ng-click="getTopTeas($event)" class="md-secondary md-hue-3">GET TEST</md-button>-->
     <div class="row text-center">
        OUR BEST TEAS
     </div>
-    
-    <section class="products">
-        <tea-card-directive></tea-card-directive>
-        <tea-card-directive></tea-card-directive>
-        <tea-card-directive></tea-card-directive>
-        <tea-card-directive></tea-card-directive>
-        <tea-card-directive></tea-card-directive>
-        <tea-card-directive></tea-card-directive>
-    </section>
+
+    <grid-directive></grid-directive>
+ 
+    <!--<section class="products" ng-repeat="topTea in topTeas track by $index">-->
+        <!--<tea-card-directive></tea-card-directive>-->
+    <!--</section>-->
     
 </div>

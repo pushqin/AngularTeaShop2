@@ -4,7 +4,7 @@
 angular.module("iAngelsTeaShop")
     .directive("teaCardDirective", function() {
     return {
-        templateUrl : "app/components/teaCard/teaCard.html"
+        templateUrl : "app/components/teaCard/teaCard.html",
     };
 });
 

@@ -1,21 +1,90 @@
 // create the module and name it iAngelsTeaShop
 // also include ngRoute for all our routing needs
 /*global angular */
- var iAngelsTeaShop = angular.module('iAngelsTeaShop', ['ngRoute','ui.bootstrap','ngMaterial']);
-//var iAngelsTeaShop = angular.module('iAngelsTeaShop', ['ngRoute','ui.bootstrap']).
-// config(function($mdIconProvider) {
-//     $mdIconProvider
-//         .iconSet('social', 'img/icons/sets/social-icons.svg', 24)
-//         .iconSet('device', 'img/icons/sets/device-icons.svg', 24)
-//         .iconSet('communication', 'img/icons/sets/communication-icons.svg', 24)
-//         .defaultIconSet('img/icons/sets/core-icons.svg', 24);
-// })
+ var iAngelsTeaShop = angular.module('iAngelsTeaShop', ['ngRoute','ui.bootstrap','ngMaterial','ngMockE2E','ngMessages']);
 
 // create the controller and inject Angular's $scope
-iAngelsTeaShop.controller('homeController', ['$scope',function ($scope) {
+iAngelsTeaShop.controller('gridListDemoCtrl', function($scope) {
+        
+        this.tiles = buildGridModel({
+            icon : "avatar:svg-",
+            title: "Svg-",
+            background: ""
+        });
+        
+        function buildGridModel(tileTmpl){
+            var it, results = [ ];
+            
+            for (var j=0; j<11; j++) {
+                
+                it = angular.extend({},tileTmpl);
+                it.icon  = it.icon + (j+1);
+                it.title = it.title + (j+1);
+                it.span  = { row : 1, col : 1 };
+                
+                switch(j+1) {
+                    case 1:
+                        it.background = "red";
+                        it.span.row = it.span.col = 2;
+                        break;
+                    
+                    case 2: it.background = "green";         break;
+                    case 3: it.background = "darkBlue";      break;
+                    case 4:
+                        it.background = "blue";
+                        it.span.col = 2;
+                        break;
+                    
+                    case 5:
+                        it.background = "yellow";
+                        it.span.row = it.span.col = 2;
+                        break;
+                    
+                    case 6: it.background = "pink";          break;
+                    case 7: it.background = "darkBlue";      break;
+                    case 8: it.background = "purple";        break;
+                    case 9: it.background = "deepBlue";      break;
+                    case 10: it.background = "lightPurple";  break;
+                    case 11: it.background = "yellow";       break;
+                }
+                
+                results.push(it);
+            }
+            return results;
+        }
+    })
+    .config( function( $mdIconProvider ){
+        $mdIconProvider.iconSet("avatar", 'icons/avatar-icons.svg', 128);
+    });
+
+
+
+// create the controller and inject Angular's $scope
+iAngelsTeaShop.controller('homeController', ['$scope','$http','$q',function ($scope,$http, $q) {
     // "use strict";
     // create a message to display in our view
     $scope.message = 'Everyone come and see how good I look!';
+    
+    $scope.topTeas = [];
+    $scope.newPhone = {
+        name: ''
+    };
+    
+    $scope.getTopTeas = function() {
+        $http.get('/topteas').then(function(response) {
+            $scope.topTeas = response.data;
+        });
+    };
+    
+    $scope.addPhone = function(phone) {
+        $http.post('/phones', phone).then(function() {
+            $scope.newPhone = {name: ''};
+            return $scope.getPhones();
+        });
+    };
+    
+    $scope.getTopTeas();
+    
 }]);
 
 iAngelsTeaShop.controller('productsController', ['$scope',function ($scope) {
